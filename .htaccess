@@ -1,3 +1,4 @@
 RewriteEngine on
-RewriteCond %{REQUEST_URI} !^https://rasmiy.github.io/Resume/$
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !^rasmiy.github.io$
 RewriteRule ^(.*)$ http://semenov.razum.top/$1/ [R=permanent,L]
