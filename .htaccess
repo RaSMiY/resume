@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(.*)$ http://semenov.razum.top/$1 [R=permanent,L]
