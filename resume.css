@@ -9,7 +9,7 @@
                         (matt brown)
 ---------------------------------------------------------------------------------
 */
-
+/*body {overflow-y: hidden;}*/
 
 .msg { padding: 10px; background: #222; position: relative; }
 .msg h1 { color: #fff;  }
