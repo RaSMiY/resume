@@ -9,6 +9,9 @@
                         (matt brown)
 ---------------------------------------------------------------------------------
 */
+/* a:link { color: purple;} */
+a:visited { color: #709;}
+a:hover { color: #266400; }
 
 .msg { padding: 10px; background: #222; position: relative; }
 .msg h1 { color: #fff;  }
