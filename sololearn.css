@@ -1,0 +1,1449 @@
+@font-face {
+ font-family:'roboto';
+ src:url('../Content/Roboto/roboto-regular.eot');
+ src:url('../Content/Roboto/roboto-regular.eot?#iefix') format('embedded-opentype'),url('../Content/Roboto/roboto-regular.woff') format('woff'),url('../Content/Roboto/roboto-regular.ttf') format('truetype'),url('../Content/Roboto/roboto-regular.svg#robotoregular') format('svg');
+ font-weight:normal;
+ font-style:normal
+}
+@font-face {
+ font-family:'roboto';
+ src:url('../Content/Roboto/roboto-bold.eot');
+ src:url('../Content/Roboto/roboto-bold.eot?#iefix') format('embedded-opentype'),url('../Content/Roboto/roboto-bold.woff') format('woff'),url('../Content/Roboto/roboto-bold.ttf') format('truetype'),url('../Content/Roboto/roboto-bold.svg#robotobold') format('svg');
+ font-weight:bold;
+ font-style:normal
+}
+.material {
+ box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24)
+}
+.material.level2 {
+ box-shadow:0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23)
+}
+.material.level3 {
+ box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23)
+}
+.material.level4 {
+ box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)
+}
+.material.level5 {
+ box-shadow:0 19px 38px rgba(0,0,0,.3),0 15px 12px rgba(0,0,0,.22)
+}
+.materialRadio .icon {
+ position:relative;
+ width:18px;
+ height:18px
+}
+.materialRadio .outline {
+ position:absolute;
+ top:0;
+ left:0;
+ width:12px;
+ height:12px;
+ border-radius:50%;
+ border:solid 2px;
+ border-color:#5a5a5a
+}
+.materialRadio .fill {
+ position:absolute;
+ top:0;
+ left:0;
+ width:16px;
+ height:16px;
+ border-radius:50%;
+ background-color:#0f9d58;
+ -webkit-transform:scale(0);
+ transform:scale(0);
+ transition:-webkit-transform ease .28s;
+ transition:transform ease .28s
+}
+.materialRadio.selected .fill {
+ -webkit-transform:scale(1.1);
+ transform:scale(1.1)
+}
+.materialCheckbox .icon {
+ position:relative;
+ width:18px;
+ height:18px
+}
+.materialCheckbox .outline {
+ position:absolute;
+ box-sizing:border-box;
+ top:0;
+ left:0;
+ width:18px;
+ height:18px;
+ border:solid 2px;
+ border-color:#5a5a5a;
+ transition:all ease-out 140ms;
+ transition-property:transform,-webkit-transform,top,left,width,height,opacity
+}
+.materialCheckbox .fill {
+ position:absolute;
+ -webkit-transform:rotate(45deg);
+ transform:rotate(45deg);
+ top:13px;
+ left:5px;
+ width:4px;
+ height:4px;
+ border-top:none;
+ border-left:none;
+ border-right:solid 2px;
+ border-bottom:solid 2px;
+ border-color:#0f9d58;
+ transition:all ease-out 140ms;
+ transition-property:top,left,width,height,opacity,border-right-width,border-bottom-width;
+ transition-delay:140ms;
+ opacity:0
+}
+.materialCheckbox.selected .fill,.materialCheckbox input:checked~.icon .fill {
+ opacity:1;
+ top:-4px;
+ left:6px;
+ width:10px;
+ height:21px
+}
+.materialCheckbox.selected .outline,.materialCheckbox input:checked~.icon .outline {
+ transform:rotate(45deg);
+ top:13px;
+ left:5px;
+ width:4px;
+ height:4px;
+ opacity:0
+}
+.materialCheckbox.checkbox {
+ position:relative
+}
+.materialCheckbox.checkbox .icon {
+ position:absolute;
+ top:50%;
+ left:0;
+ margin-top:-9px;
+ z-index:-1
+}
+.materialCheckbox.checkbox input {
+ display:none
+}
+.materialCheckbox.checkbox label {
+ padding:0 0 0 30px
+}
+.materialInput {
+ position:relative;
+ margin:20px
+}
+.materialInput input {
+ border:none;
+ background:none;
+ outline:none;
+ width:100%;
+ font-family:inherit;
+ font-size:inherit;
+ padding-bottom:4px
+}
+.materialInput label {
+ position:absolute;
+ top:0;
+ left:0;
+ color:#757575
+}
+.materialInput .underline,.materialInput .focusedUnderline {
+ position:absolute;
+ left:0;
+ right:0;
+ bottom:1px;
+ height:1px;
+ background:#757575
+}
+.materialInput .focusedUnderline {
+ bottom:0;
+ height:2px;
+ background:#4059a9;
+ transform:scale(0,1);
+ -webkit-transform:scale(0,1);
+ transition:all ease-in 150ms;
+ transition-property:-webkit-transform,transform
+}
+.materialInput .cursor {
+ position:absolute;
+ top:0;
+ left:0;
+ width:1px;
+ height:1.2em;
+ display:none;
+ background:#4059a9;
+ opacity:0;
+ -webkit-transform-origin:0%;
+ transform-origin:0%
+}
+.materialInput input:focus~.focusedUnderline,.materialInput textarea:focus~.focusedUnderline {
+ transform:none;
+ -webkit-transform:none
+}
+.materialInput input:focus~.cursor,.materialInput textarea:focus~.cursor {
+ display:block;
+ -webkit-animation:materialInput-cursor ease 150ms;
+ animation:materialInput-cursor ease 150ms
+}
+@-webkit-keyframes materialInput-cursor {
+ 0% {
+  opacity:.4;
+  -webkit-transform:translate(3em,0) scale(50,1);
+  transform:translate(3em,0) scale(50,1)
+ }
+ 99% {
+  opacity:.75;
+  -webkit-transform:none;
+  transform:none
+ }
+ 100% {
+  opacity:0
+ }
+}
+@keyframes materialInput-cursor {
+ 0% {
+  opacity:.4;
+  -webkit-transform:translate(5em,0) scale(50,1);
+  transform:translate(5em,0) scale(50,1)
+ }
+ 99% {
+  opacity:.75;
+  -webkit-transform:none;
+  transform:none
+ }
+ 100% {
+  opacity:0
+ }
+}
+.materialProgressbar {
+ height:4px;
+ position:relative
+}
+.materialProgressbar i {
+ display:block;
+ background:rgba(255,255,255,.3);
+ position:absolute;
+ top:0;
+ left:0;
+ right:0;
+ bottom:0
+}
+.materialProgressbar.intermediate i {
+ -webkit-transform-origin:center center;
+ transform-origin:center center;
+ -webkit-animation:indeterminate-bar 1s linear infinite;
+ animation:indeterminate-bar 1s linear infinite
+}
+@-webkit-keyframes indeterminate-bar {
+ 0% {
+  -webkit-transform:translate(-50%) scaleX(0)
+ }
+ 50% {
+  -webkit-transform:translate(0%) scaleX(.3)
+ }
+ 100% {
+  -webkit-transform:translate(50%) scaleX(0)
+ }
+}
+@keyframes indeterminate-bar {
+ 0% {
+  transform:translate(-50%) scaleX(0)
+ }
+ 50% {
+  transform:translate(0%) scaleX(.3)
+ }
+ 100% {
+  transform:translate(50%) scaleX(0)
+ }
+}
+.actionButton {
+ width:60px;
+ height:60px;
+ border-radius:30px;
+ box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
+ border:none;
+ background:#0ad;
+ cursor:pointer
+}
+.actionButton:hover {
+ box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22)
+}
+.materialButton {
+ background:none;
+ border:none;
+ overflow:hidden;
+ position:relative;
+ padding:8px;
+ min-width:50px;
+ color:#777;
+ cursor:pointer;
+ text-transform:uppercase;
+ border-radius:3px;
+ font-size:14px;
+ outline:none;
+ display:inline-block
+}
+a.materialButton {
+ -moz-box-sizing:border-box;
+ -webkit-box-sizing:border-box;
+ box-sizing:border-box
+}
+.materialButton.small {
+ padding:5px;
+ font-size:12px
+}
+.materialButton.disabled {
+ cursor:auto;
+ color:#d0cccc
+}
+.materialButton,.materialButton:hover {
+ text-decoration:none
+}
+.materialIcon,.actionButton {
+ overflow:hidden;
+ position:relative;
+ border-radius:50%;
+ cursor:pointer;
+ z-index:10
+}
+.materialResponse {
+ overflow:hidden;
+ position:relative
+}
+.materialWave {
+ content:'';
+ display:block;
+ position:absolute;
+ height:160px;
+ width:160px;
+ background:rgba(0,0,0,.1);
+ border-radius:50%;
+ transform:scale(0,0);
+ -webkit-transform:scale(0,0);
+ z-index:0;
+ pointer-events:none
+}
+.materialButton.negative {
+ color:#d62d20
+}
+.materialButton.negative .materialWave {
+ background:rgba(255,55,0,.2)
+}
+.materialButton.primary,.materialButton.positive {
+ color:#09f
+}
+.materialButton.primary .materialWave,.materialButton.positive .materialWave {
+ background:rgba(0,144,255,.2)
+}
+.actionButton .materialWave,.materialResponse .materialWave {
+ background:rgba(255,255,255,.2)
+}
+.materialButton.elevated {
+ color:#333;
+ background:#aaa;
+ padding:10px 20px
+}
+.materialButton.primary.elevated {
+ color:#fff;
+ background:#09f
+}
+.materialButton.primary.elevated .materialWave {
+ background:rgba(255,255,255,.1)
+}
+.materialSpinner {
+ -webkit-animation:materialSpinnerRotate 1.4s linear infinite;
+ animation:materialSpinnerRotate 1.4s linear infinite;
+ height:100px;
+ position:relative;
+ width:100px;
+ margin:auto;
+ display:block
+}
+.materialSpinner .path {
+ stroke-dasharray:1,200;
+ stroke-dashoffset:0;
+ -webkit-animation:materialSpinnerDash 1.4s ease-in-out infinite,materialSpinnerColor 5.6s ease-in-out infinite;
+ animation:materialSpinnerDash 1.4s ease-in-out infinite,materialSpinnerColor 5.6s ease-in-out infinite;
+ stroke-linecap:round
+}
+@keyframes materialSpinnerRotate {
+ 100% {
+  transform:rotate(360deg)
+ }
+}
+@keyframes materialSpinnerDash {
+ 0% {
+  stroke-dasharray:1,200;
+  stroke-dashoffset:0
+ }
+ 50% {
+  stroke-dasharray:89,200;
+  stroke-dashoffset:-35
+ }
+ 100% {
+  stroke-dasharray:89,200;
+  stroke-dashoffset:-124
+ }
+}
+@keyframes materialSpinnerColor {
+ 100%,0% {
+  stroke:#d62d20
+ }
+ 40% {
+  stroke:#0057e7
+ }
+ 66% {
+  stroke:#008744
+ }
+ 80%,90% {
+  stroke:#ffa700
+ }
+}
+@-webkit-keyframes materialSpinnerRotate {
+ 100% {
+  transform:rotate(360deg)
+ }
+}
+@-webkit-keyframes materialSpinnerDash {
+ 0% {
+  stroke-dasharray:1,200;
+  stroke-dashoffset:0
+ }
+ 50% {
+  stroke-dasharray:89,200;
+  stroke-dashoffset:-35
+ }
+ 100% {
+  stroke-dasharray:89,200;
+  stroke-dashoffset:-124
+ }
+}
+@-webkit-keyframes materialSpinnerColor {
+ 100%,0% {
+  stroke:#d62d20
+ }
+ 40% {
+  stroke:#0057e7
+ }
+ 66% {
+  stroke:#008744
+ }
+ 80%,90% {
+  stroke:#ffa700
+ }
+}
+a {
+ text-decoration:none
+}
+h2 {
+ font-size:22px;
+ font-weight:normal;
+ color:#555
+}
+h3 {
+ font-size:16px;
+ font-weight:normal;
+ color:#555
+}
+.block {
+ font-size:14px
+}
+#userCodes::-webkit-scrollbar {
+ -webkit-appearance:none;
+ width:3px
+}
+#userCodes::-webkit-scrollbar-thumb {
+ border-radius:4px;
+ background-color:rgba(0,0,0,.5);
+ -webkit-box-shadow:0 0 1px rgba(255,255,255,.5)
+}
+.userProfile {
+ font-size:16px;
+ position:relative;
+ min-height:120px;
+ overflow:hidden
+}
+.userProfile .user,.userProfile .course {
+ white-space:nowrap
+}
+.userProfile .name {
+ font-size:32px;
+ font-weight:normal;
+ color:inherit;
+ white-space:normal
+}
+.userProfile .name.long {
+ font-size:24px
+}
+.userProfile .name a {
+ font-size:16px;
+ font-weight:300;
+ color:inherit;
+ vertical-align:top
+}
+.userProfile .detail {
+ font-size:16px
+}
+.userProfile .detail label::after {
+ content:':'
+}
+.userProfile .socialOutline {
+ direction:ltr;
+ text-align:left;
+ margin-top:5px;
+ margin-left:144px
+}
+.courseUserProfile .socialOutline {
+ margin-left:0;
+ float:right
+}
+.userProfile .avatar {
+ background-color:#0061a8;
+ border-radius:50%;
+ height:120px;
+ width:120px;
+ overflow:hidden;
+ display:inline-block;
+ vertical-align:top
+}
+.userProfile .avatar img {
+ max-height:100%;
+ max-width:100%
+}
+.userProfile .details {
+ margin:20px 0 0 20px;
+ color:#555;
+ display:inline-block;
+ vertical-align:top;
+ white-space:normal
+}
+.userProfile.current .details {
+ margin-top:10px
+}
+.courseUserProfile .user {
+ text-align:right;
+ direction:rtl
+}
+.userProfile .user .details {
+ padding-right:120px
+}
+.courseUserProfile .user .details {
+ text-align:right;
+ margin-left:0;
+ margin-right:20px;
+ direction:ltr;
+ padding-left:120px;
+ padding-right:0
+}
+.courseUserProfile .course .details {
+ padding-right:120px
+}
+.courseUserProfile .user,.courseUserProfile .course {
+ width:46%;
+ overflow:hidden;
+ float:left
+}
+.courseUserProfile .user {
+ padding-right:4%
+}
+.courseUserProfile .course {
+ padding-left:4%
+}
+.userProfile .currentCourse {
+ height:36px;
+ width:36px;
+ border-radius:50%;
+ position:absolute;
+ left:80px;
+ top:80px
+}
+.userProfile .materialButton {
+ margin:10px 0 0;
+ font-size:14px;
+ padding:8px 16px
+}
+.userCoursesTitle {
+ overflow:hidden
+}
+.userCoursesTitle h2 {
+ display:inline-block;
+ vertical-align:middle
+}
+.userCoursesTitle .manageUserCourses {
+ display:inline-block;
+ vertical-align:middle;
+ background:url('../Images/manageCoursesSprite.png');
+ background-repeat:no-repeat;
+ width:20px;
+ height:20px;
+ border:none;
+ background-position:0 0;
+ cursor:pointer;
+ margin:0 0 0 5px;
+ outline:none
+}
+.userCoursesTitle .manageUserCourses:hover {
+ background-position:-20px 0
+}
+.noCourses {
+ text-align:center;
+ margin:35px 0 20px 0
+}
+.noCourses .title {
+ margin:5px 0;
+ font-size:17px;
+ color:#777;
+ font-weight:bold
+}
+.noCourses .publicProfile.title {
+ font-weight:normal;
+ font-size:14px
+}
+.noCourses .description {
+ margin:0 0 10px 0;
+ font-size:14px
+}
+.userCourses {
+ margin-top:10px;
+ text-align:center
+}
+.userCourses .courseWrapper {
+ display:inline-block;
+ position:relative;
+ margin:0 5px
+}
+.userCourses .course {
+ display:inline-block;
+ width:50px;
+ height:50px;
+ border-radius:50%;
+ overflow:hidden;
+ position:absolute;
+ top:5px;
+ left:5px
+}
+.userCourses .course img {
+ max-width:100%;
+ max-height:100%
+}
+.userCourses .courseXp {
+ font-size:11px;
+ margin:5px 0 0 0
+}
+.certificates {
+ overflow:hidden
+}
+.certificates .certificate {
+ width:50%;
+ float:left;
+ min-width:360px;
+ overflow:hidden
+}
+.certificates .title {
+ display:inline-block;
+ padding-top:33px;
+ font-size:26px;
+ color:#555
+}
+.certificates .download .title {
+ padding-top:10px
+}
+.certificates .date {
+ font-size:14px;
+ color:#777
+}
+.certificates .icon {
+ display:block;
+ border-radius:50%;
+ float:left;
+ height:100px;
+ margin:10px;
+ width:100px;
+ background:#bbb
+}
+.certificates .icon img {
+ width:80px;
+ margin:10px
+}
+.certificates .download {
+ color:#333;
+ display:block;
+ margin:4px 0;
+ font-size:14px
+}
+.certificates a {
+ text-decoration:none;
+ color:#1abc9c
+}
+.certificates a:hover {
+ color:#17a589
+}
+.certificates .emptyBlock {
+ padding:30px 0;
+ text-align:center;
+ color:#777;
+ font-size:14px
+}
+.certificates .share .fb,.certificates .share .linkedin {
+ height:20px;
+ width:57px;
+ background:url('../Images/sprite.png');
+ background-position:-70px -445px;
+ display:inline-block;
+ cursor:pointer
+}
+.certificates .share .fb:hover {
+ background-position:-127px -445px
+}
+.certificates .share .linkedin {
+ width:87px;
+ background-position:-184px -445px
+}
+.userAchievements {
+ overflow:hidden;
+ width:600px;
+ margin:auto
+}
+.userAchievements .achievement.icon,.userAchievements .achievement .icon {
+ display:block;
+ border-radius:50%;
+ float:left;
+ height:100px;
+ margin:10px;
+ width:100px;
+ background:#bbb
+}
+.userAchievements.full {
+ width:auto
+}
+.userAchievements.full .achievement {
+ width:50%;
+ float:left;
+ min-width:360px
+}
+.userAchievements .achievement img {
+ margin:10px;
+ height:80px
+}
+.userAchievements .achievement {
+ overflow:hidden
+}
+.userAchievements .achievement .title {
+ font-size:20px
+}
+.userAchievements .achievement .details {
+ padding:35px 0 0 0;
+ font-size:13px;
+ overflow:hidden
+}
+.userAchievements .achievement.disabled {
+ color:#999
+}
+.loginOutline {
+ font-size:20px;
+ overflow:hidden
+}
+#loginForm {
+ width:400px;
+ float:left;
+ margin-right:20px
+}
+#loginForm .checkbox {
+ padding:10px 0;
+ font-size:14px;
+ z-index:0
+}
+#loginForm .forgotPasswordLink {
+ font-size:14px;
+ float:right;
+ line-height:36px;
+ color:inherit;
+ position:relative;
+ z-index:1
+}
+#loginForm .forgotPasswordLink:hover {
+ text-decoration:none;
+ color:#1abc9c
+}
+#loginForm .validation-summary-errors li {
+ list-style:none;
+ color:#d44
+}
+.materialButton.elevated:hover {
+ background:#a0a0a0
+}
+.materialButton.primary.elevated {
+ color:#fff;
+ background:#1abc9c
+}
+.materialButton.primary.elevated:hover {
+ background:#17a589
+}
+.loginTitle {
+ color:#777;
+ font-weight:300;
+ font-size:40px;
+ padding:15px 0
+}
+.inputAttributes {
+ margin-left:auto;
+ margin-right:auto;
+ width:300px;
+ text-align:center;
+ margin-top:10px
+}
+.inputAttributes label {
+ font-weight:bold;
+ color:#8d8d8d;
+ font-size:15px
+}
+.inputAttributes input {
+ padding:5px;
+ width:200px;
+ margin-top:5px;
+ border:2px solid #757575
+}
+#socialLoginList {
+ padding:20px 0;
+ text-align:center
+}
+#socialConnectedList {
+ overflow:hidden;
+ width:100%;
+ padding:15px 0;
+ text-align:left;
+ border-top:1px solid #eee
+}
+#socialLoginList button,#socialConnectedList button {
+ background:#333;
+ height:40px;
+ line-height:40px;
+ width:220px;
+ border:none;
+ color:#fff;
+ cursor:pointer;
+ display:inline-block;
+ position:relative;
+ padding:0 10px 0 50px;
+ margin:10px 0 0
+}
+#socialLoginList button i,#socialConnectedList button i {
+ position:absolute;
+ left:0;
+ top:0;
+ height:40px;
+ width:40px;
+ display:block;
+ background:url('../Images/sprite.png')
+}
+#socialLoginList .facebook,#socialConnectedList .facebook {
+ background:#47639e
+}
+#socialLoginList .facebook i,#socialConnectedList .facebook i {
+ background-position:-56px -378px
+}
+#socialLoginList .facebook:active,#socialConnectedList .facebook:active {
+ background:#36528d
+}
+#socialLoginList .google,#socialConnectedList .google {
+ background:#de4733
+}
+#socialLoginList .google i,#socialConnectedList .google i {
+ background-position:-110px -378px
+}
+#socialLoginList .google:active,#socialConnectedList .google:active {
+ background:#cd3622
+}
+#socialLoginList .twitter {
+ background:#00acee
+}
+#socialLoginList .twitter i {
+ background-position:-0 -378px
+}
+#socialLoginList .twitter:active {
+ background:#64caeb
+}
+.field-validation-error {
+ font-size:12px;
+ margin:-8px 0 -7px
+}
+.materialInput {
+ margin:0
+}
+.materialInput input,.materialInput label {
+ padding:15px 0
+}
+.materialInput div {
+ margin:15px 0 10px
+}
+.materialButton {
+ display:inline-block;
+ vertical-align:top;
+ padding:10px;
+ font-size:16px;
+ text-decoration:none
+}
+.formActions {
+ text-align:right;
+ padding:30px 0 10px
+}
+.changePasswordBody {
+ display:none
+}
+#uploadAvatar {
+ float:left;
+ margin-right:20px;
+ margin-bottom:15px;
+ text-align:center
+}
+#uploadAvatar .primary {
+ margin:10px 0 0 0
+}
+#uploadAvatar .primary .setAvatar {
+ position:relative;
+ width:90px
+}
+#uploadAvatar .primary .removeAvatar {
+ width:70px
+}
+#uploadAvatar .primary .setAvatar,#uploadAvatar .primary .removeAvatar {
+ cursor:pointer;
+ font-size:17px;
+ margin:5px auto 0;
+ text-align:center
+}
+#uploadAvatar .primary .setAvatar:hover,#uploadAvatar .primary .removeAvatar:hover {
+ color:#09f
+}
+#uploadAvatar .primary .chooseFile {
+ position:absolute;
+ right:0;
+ bottom:0;
+ cursor:pointer;
+ width:95px;
+ height:25px;
+ top:0;
+ left:0;
+ opacity:0
+}
+.imageBox {
+ position:relative;
+ height:180px;
+ width:180px;
+ border:1px solid #ddd;
+ background:#fff;
+ overflow:hidden;
+ background-repeat:no-repeat;
+ cursor:move
+}
+.imageBox .thumbBox {
+ position:absolute;
+ top:50%;
+ left:50%;
+ width:180px;
+ height:180px;
+ margin-top:-90px;
+ margin-left:-90px;
+ box-shadow:0 0 0 1000px rgba(255,255,255,.5);
+ background:none repeat scroll 0% 0% transparent;
+ border-radius:50%
+}
+.imageBox .spinner {
+ position:absolute;
+ top:0;
+ left:0;
+ bottom:0;
+ right:0;
+ text-align:center;
+ line-height:180px;
+ background:rgba(0,0,0,.1)
+}
+#certificateShare,#certificateShareResult {
+ position:fixed;
+ top:0;
+ left:0;
+ right:0;
+ bottom:0;
+ background:rgba(255,255,255,.7);
+ display:none
+}
+#certificateShare .dialog,#certificateShareResult .dialog {
+ position:absolute;
+ top:50%;
+ left:50%;
+ width:500px;
+ background:#fcfcfc;
+ border:solid 10px #5582ab;
+ border-radius:5px;
+ margin-top:-235px;
+ margin-left:-260px
+}
+#certificateShareResult .dialog {
+ text-align:center;
+ width:300px;
+ margin-top:-100px;
+ margin-left:-160px
+}
+#certificateShareResult .message {
+ padding:30px 20px 10px
+}
+#certificateShare .loader {
+ display:none;
+ position:absolute;
+ top:0;
+ left:0;
+ right:0;
+ bottom:0
+}
+#certificateShare .loader img {
+ position:absolute;
+ top:50%;
+ left:50%;
+ margin-left:-110px
+}
+#certificateShare.open,#certificateShareResult.open {
+ display:block
+}
+#certificateShare.loading .data {
+ opacity:.5
+}
+#certificateShare.loading .loader {
+ display:block
+}
+#certificateShare .cert {
+ width:482px;
+ margin:0 8px;
+ border:1px solid #bdc7d8
+}
+#certificateShare .textContainer {
+ margin:8px 16px 8px 8px
+}
+#certificateShare .buttons {
+ padding:8px;
+ text-align:right
+}
+#certificateShare .materialButton,#certificateShareResult .materialButton {
+ padding:6px 10px;
+ margin-left:4px;
+ font-size:14px
+}
+#certificateShareResult .materialButton {
+ margin:10px;
+ min-width:100px
+}
+#certificateShareResult .materialButton.primary,#certificateShare .materialButton.primary {
+ background:#5582ab
+}
+#certificateShare textarea {
+ font-weight:normal;
+ overflow:hidden;
+ width:100%;
+ min-width:100%;
+ max-width:100%;
+ min-height:40px;
+ border:1px solid #bdc7d8;
+ padding:3px;
+ color:gray;
+ margin:5px auto;
+ display:block;
+ font-size:12px
+}
+.additionalRecoursesWrapper {
+ text-align:right
+}
+.additionalRecourses {
+ color:#1abc9c;
+ font-size:13px
+}
+.bootcampContainer {
+}
+.bootcampContainer .heading {
+ display:flex;
+ align-items:center;
+ margin:0 0 10px 0
+}
+.bootcampContainer .heading .main {
+ margin:0 0 0 15px
+}
+.bootcampContainer .heading .subtitle {
+ margin:5px 0 0 0;
+ color:#656565
+}
+.bootcampContainer .logo {
+ width:60px
+}
+.bootcampContainer .materialButton {
+ min-width:175px;
+ margin:10px 0
+}
+.bootcampContainer .getStarted {
+ margin:10px 0 0 0;
+ text-align:center
+}
+.bootcampComplation {
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ margin:10px 0
+}
+.bootcampComplation img {
+ width:50px
+}
+.bootcampComplation p {
+ font-size:25px;
+ color:#1abc9c
+}
+.userBootcampHeader {
+ display:flex;
+ align-items:center
+}
+.userBootcampHeader img {
+ width:55px;
+ margin:0 10px 0 0
+}
+.bootcampCourses {
+ display:flex;
+ flex-direction:column;
+ align-items:center;
+ margin:10px 0
+}
+.bootcampCourse {
+ display:inline-flex;
+ align-items:center;
+ margin:10px 0
+}
+.bootcampCourse .details {
+ display:inline-flex;
+ align-items:center
+}
+.bootcampCourse .name {
+ color:#000;
+ margin:0 10px;
+ font-size:17px;
+ font-weight:500;
+ width:180px
+}
+.bootcampCourse .details .materialButton {
+ font-size:13px;
+ padding:8px;
+ margin:0 0 0 10px;
+ width:100px;
+ text-align:center
+}
+.bootcampCourse .details .materialButton.hide {
+ visibility:hidden
+}
+.progress-bar {
+ background-color:#dedede;
+ height:15px;
+ width:350px;
+ border-radius:5px;
+ box-shadow:0 1px 5px #dedede inset,0 1px 0 #dedede
+}
+.progress-bar span {
+ display:inline-block;
+ height:100%;
+ border-radius:3px;
+ box-shadow:0 1px 0 rgba(255,255,255,.5) inset;
+ transition:width .4s ease-in-out;
+ background-color:#1abc9c
+}
+.bootcampCourse .course {
+ display:inline-block;
+ overflow:hidden;
+ width:60px;
+ height:60px;
+ border-radius:50%
+}
+.bootcampCourse .course img {
+ max-width:100%;
+ max-height:100%
+}
+.captcha {
+ margin:10px 0 0 0
+}
+.validation-summary-errors {
+ font-size:15px;
+ color:#e50000
+}
+@media screen and (max-width:1030px) {
+ .pageLayout.hasSidebar .content {
+  margin-right:320px
+ }
+ .pageLayout .sidebar {
+  position:absolute;
+  margin:0
+ }
+ #loginForm {
+  width:100%
+ }
+ .formActions {
+  text-align:center
+ }
+ .formActions .materialButton {
+  margin-left:5px;
+  margin-right:5px
+ }
+}
+@media screen and (max-width:1005px) {
+ .courseUserProfile .details {
+  display:initial
+ }
+ .courseUserProfile .socialOutline {
+  margin-top:10px
+ }
+ .courseUserProfile .course .details {
+  padding-right:0
+ }
+ .courseUserProfile .socialOutline div {
+  float:right
+ }
+ .courseUserProfile .user .details {
+  margin-right:0
+ }
+}
+@media screen and (max-width:900px) {
+ .courseUserProfile .course .details,.courseUserProfile .user .details {
+  padding:0;
+  display:block
+ }
+ .userProfile .details {
+  margin:0
+ }
+}
+@media screen and (max-width:800px) {
+ .loginTitle {
+  font-size:30px
+ }
+ .loginOutline {
+  font-size:15px
+ }
+}
+@media screen and (max-width:790px) {
+ .userAchievements.full .achievement {
+  float:none;
+  margin:0 auto
+ }
+ .certificates .certificate {
+  float:none;
+  margin:5px auto
+ }
+ .certificate .details {
+  overflow:hidden
+ }
+}
+@media screen and (max-width:785px) {
+ #loginForm {
+  width:100%
+ }
+ .bootcampCourse .details {
+  display:block;
+  margin:0 0 0 10px
+ }
+ .bootcampCourse .name {
+  margin:0
+ }
+ .bootcampCourse .details .materialButton {
+  margin:0
+ }
+ .progress-bar {
+  margin:4px 0
+ }
+}
+@media screen and (max-width:750px) {
+ .courseUserProfile .user,.courseUserProfile .course {
+  float:none;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto
+ }
+ .courseUserProfile .user .details,.courseUserProfile .course .details {
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto
+ }
+ .courseUserProfile .user,.courseUserProfile .course {
+  width:auto
+ }
+ .courseUserProfile .course {
+  padding-left:0
+ }
+ .courseUserProfile .user {
+  padding-right:0
+ }
+ .courseUserProfile .socialOutline {
+  margin:15px 0 15px 15px
+ }
+ .courseUserProfile .socialOutline {
+  width:300px;
+  float:none;
+  margin-left:auto;
+  margin-right:auto
+ }
+}
+@media screen and (max-width:690px) {
+ .wrapper {
+  width:auto;
+  margin-left:15px;
+  margin-right:15px
+ }
+ .pageLayout .sidebar {
+  position:static;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:20px
+ }
+ .pageLayout.hasSidebar .content {
+  margin:0;
+  min-width:290px
+ }
+ .formActions {
+  text-align:center
+ }
+ .loginTitle {
+  font-size:40px
+ }
+ .loginOutline {
+  font-size:20px
+ }
+}
+@media screen and (max-width:665px) {
+ #loginForm .forgotPasswordLink {
+  float:none
+ }
+}
+@media screen and (max-width:500px) {
+ .User .block {
+  padding:10px
+ }
+ .progress-bar {
+  width:250px
+ }
+}
+@media screen and (max-width:495px) {
+ .userProfile .socialOutline {
+  margin-left:125px
+ }
+ .courseUserProfile .socialOutline {
+  margin-left:auto
+ }
+}
+@media screen and (max-width:475px) {
+ .userProfile .avatar {
+  width:70px;
+  height:70px
+ }
+ .userProfile .user .details {
+  padding-right:75px
+ }
+ .userProfile .user .details {
+  padding-right:0
+ }
+ .userProfile .name,h2 {
+  font-size:20px
+ }
+ .userProfile .materialButton {
+  font-size:12px
+ }
+ .userAchievements .achievement.icon,.userAchievements .achievement .icon,.certificates .icon {
+  width:50px;
+  height:50px
+ }
+ .userAchievements .achievement img {
+  height:40px;
+  margin:5px
+ }
+ .certificates .icon img {
+  width:40px;
+  margin:5px
+ }
+ .userAchievements .achievement .details {
+  padding:15px 0 0 0
+ }
+ .certificates .download .title {
+  font-size:18px;
+  padding-top:10px
+ }
+ .loginTitle {
+  font-size:25px
+ }
+ .loginOutline {
+  font-size:15px
+ }
+ .materialButton {
+  font-size:12px
+ }
+ .formActions {
+  padding:25px 0 10px
+ }
+ .userProfile .socialOutline {
+  margin-left:75px
+ }
+ .courseUserProfile .socialOutline {
+  margin-left:auto
+ }
+ .userAchievements .achievement .title,.certificates .title {
+  font-size:18px
+ }
+ .certificate .details {
+  overflow:hidden
+ }
+ .certificates .title {
+  padding-top:15px
+ }
+ .userProfile {
+  min-height:0
+ }
+}
+@media screen and (max-width:460px) {
+ .userProfile .detail {
+  word-wrap:break-word
+ }
+}
+@media screen and (max-width:450px) {
+ .userAchievements.full .achievement {
+  min-width:auto;
+  width:auto
+ }
+ .certificates .certificate {
+  min-width:auto;
+  width:auto
+ }
+}
+@media screen and (max-width:425px) {
+ .userProfile .socialOutline {
+  width:100px;
+  margin-left:auto;
+  margin-right:auto
+ }
+ .userProfile .socialOutline div {
+  float:none
+ }
+ .facebookShare,.googleplusShare,.twitterShare {
+  margin-bottom:5px
+ }
+ .userProfile.current .details {
+  margin:0
+ }
+ .userProfile .user {
+  text-align:center
+ }
+ .userProfile .avatar {
+  display:block;
+  margin:0 auto
+ }
+ .progress-bar {
+  width:200px
+ }
+}
+@media screen and (max-width:360px) {
+ .captcha .g-recaptcha {
+  -moz-transform:scale(.88);
+  -ms-transform:scale(.88);
+  -o-transform:scale(.88);
+  -webkit-transform:scale(.88);
+  transform:scale(.88);
+  -moz-transform-origin:0;
+  -ms-transform-origin:0;
+  -o-transform-origin:0;
+  -webkit-transform-origin:0;
+  transform-origin:0
+ }
+}
