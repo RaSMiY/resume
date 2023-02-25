@@ -12,13 +12,13 @@
 	<link rel="stylesheet" type="text/css" href="resume.css" media="all" />
 
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script>
+	<!--<script>
 		  function resizeIframe(obj) {
 					// obj.style.height = $(window).height() - 50 + 'px';
 					console.log('1');
 					obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
 		  }
-	</script>
+	</script>-->
 	
 </head>
 <body>
@@ -34,7 +34,8 @@
 		</nav>
 	</header>
 	<article>
-		<iframe src="resume-en.html" name="content" style="width: 100%; height: calc(100vh - 50px); border:none;" onload="resizeIframe(this)"></iframe>
+		<iframe src="resume-en.html" name="content" style="width: 100%; height: calc(100vh - 50px); border:none;"></iframe>
+		<!--<iframe src="resume-en.html" name="content" style="width: 100%; height: calc(100vh - 50px); border:none;" onload="resizeIframe(this)"></iframe>-->
 	</article>
 
 </body>
